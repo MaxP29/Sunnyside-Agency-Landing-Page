@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fraunces", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  vertical-align: baseline;
+}
+
+body {
+  width: 100vw;
+  height: 100%;
+}
+
+/* Demo - 1095px x 1010px */
+
+/* Hero */
+
+.header {
+  position: relative;
+  height: 62vh;
+  min-width: 100%;
+  background: url("images/desktop/image-header.jpg") no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: 80%;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 2rem;
+  padding: 3rem;
+  z-index: 1;
+}
+
+.nav-links {
+  align-items: center;
+  font-size: 1.8rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.title {
+  font-family: "Fraunces";
+  font-weight: 700;
+  font-size: 5.2rem;
+  letter-spacing: 0.5rem;
+  margin-top: 3rem;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+}
+
+.arrow {
+  scale: 0.8;
+  position: absolute;
+  right: 49%;
+  top: 38%;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 2rem;
+  font-size: 1.2rem;
+}
+
+.nav-link:last-child {
+  color: black;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  background-color: white;
+  border-radius: 10rem;
+  text-transform: uppercase;
+}
+
+/* Features & Images */
+
+/* FIXME / REMINDER: Fix Underlines (Learn-More, change Position = relative), Sort Out Media Queries & Sizing, Upped rows to 50vh - Needs checking with the rest of the changes */
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50vh 50vh 50vh;
+}
+
+.feature {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5rem;
+  gap: 2rem;
+  padding: 12rem;
+}
+
+.feature-heading {
+  font-size: 4rem;
+  color: hsl(212, 27%, 19%);
+}
+
+.feature-text {
+  line-height: 1.6;
+  margin-top: 2rem;
+  font-size: 2rem;
+  color: hsl(213, 9%, 39%);
+}
+
+.features-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 34rem;
+  gap: 2rem;
+}
+
+.feature-heading-bottom {
+  font-size: 2.6rem;
+  font-weight: 900;
+}
+
+.graphic {
+  color: hsl(167, 40%, 24%);
+}
+
+.photography {
+  color: hsl(198, 62%, 26%);
+}
+
+.feature-text-bottom {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 4rem;
+}
+
+.learn-more {
+  display: flex;
+  margin-top: 4rem;
+  font-size: 1.8rem;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: black;
+  letter-spacing: 0.1rem;
+}
+
+.underline {
+  position: absolute;
+  width: 20%;
+  height: 1rem;
+  border-radius: 2rem;
+  right: 0;
+  opacity: 0.3;
+  transition: 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.underline-yellow {
+  bottom: 13%;
+  left: 16%;
+  background-color: hsl(51, 100%, 49%);
+}
+
+.underline-red {
+  bottom: 7%;
+  left: 16%;
+  background-color: hsl(7, 99%, 70%);
+}
+
+.underline-red:hover {
+  opacity: 1;
+}
+
+.egg {
+  background: url("images/desktop/image-transform.jpg");
+  background-position: center;
+}
+
+.lamp {
+  background: url("images/desktop/image-stand-out.jpg");
+  background-position: center;
+}
+
+.cherry {
+  background: url("images/desktop/image-graphic-design.jpg");
+  background-position-x: center;
+  background-position-y: top;
+}
+
+.oranges {
+  background: url("images/desktop/image-photography.jpg");
+  background-position-x: center;
+  background-position-y: top;
+}
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1095px) {
+  .title {
+    margin-top: 5rem;
+  }
+
+  .arrow {
+    right: 48%;
+    top: 44%;
+  }
+}
