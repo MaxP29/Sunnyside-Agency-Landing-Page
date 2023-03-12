@@ -94,7 +94,6 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 5rem;
   gap: 2rem;
   padding: 12rem;
 }
@@ -108,7 +107,7 @@ body {
   line-height: 1.6;
   margin-top: 2rem;
   font-size: 2rem;
-  color: hsl(213, 9%, 39%);
+  color: hsl(213, 9%, 39%, 0.7);
 }
 
 .features-bottom {
@@ -116,7 +115,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 34rem;
+  margin-top: 30rem;
   gap: 2rem;
 }
 
@@ -178,28 +177,208 @@ body {
 }
 
 .egg {
-  background: url("images/desktop/image-transform.jpg");
-  background-position: center;
+  background: url("images/desktop/image-transform.jpg") no-repeat;
+  background-position: left;
+  background-size: cover;
 }
 
 .lamp {
-  background: url("images/desktop/image-stand-out.jpg");
-  background-position: center;
+  background: url("images/desktop/image-stand-out.jpg") no-repeat;
+  background-position: right;
+  background-size: cover;
 }
 
 .cherry {
-  background: url("images/desktop/image-graphic-design.jpg");
+  background: url("images/desktop/image-graphic-design.jpg") no-repeat;
   background-position-x: center;
   background-position-y: top;
+  background-size: cover;
 }
 
 .oranges {
-  background: url("images/desktop/image-photography.jpg");
+  background: url("images/desktop/image-photography.jpg") no-repeat;
   background-position-x: center;
   background-position-y: top;
+  background-size: cover;
 }
 
-/* Media Queries */
+/* Client Testimonials */
+
+.testimonials {
+  height: 50vh;
+  margin: 10rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 6rem 9rem 0 9rem;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem;
+}
+
+.testimonial-heading {
+  color: hsl(213, 9%, 39%, 0.5);
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.testimonial-img {
+  height: 30%;
+  border-radius: 50%;
+  margin-bottom: 5rem;
+}
+
+.testimonial-text {
+  text-align: center;
+  font-size: 1.8rem;
+  color: hsl(213, 9%, 39%);
+  margin-bottom: 6rem;
+  line-height: 1.6;
+}
+
+.testimonial-author {
+  font-size: 2rem;
+  font-weight: 900;
+  color: hsl(212, 27%, 19%);
+  margin-bottom: 1rem;
+}
+
+.testimonial-job {
+  font-size: 1.4rem;
+  color: hsl(213, 9%, 39%, 0.5);
+}
+
+/* Gallery */
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery-img {
+  width: 25vw;
+}
+
+/* Footer */
+.footer {
+  font-size: 1.6rem;
+  color: hsl(168, 34%, 41%);
+  height: 30vh;
+  background-color: hsl(167, 44%, 70%);
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 6rem;
+}
+
+.footer-logo {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 4rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 5rem;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: hsl(168, 34%, 41%);
+}
+
+.social-links {
+  display: flex;
+  gap: 2rem;
+  margin-top: 8rem;
+}
+
+/* Media Queries - (1650 x 1295) */
+
+/* 1920px x 1080px */
+
+@media (max-width: 1920px) {
+  .features {
+    grid-template-rows: 60vh 60vh 60vh;
+  }
+
+  .learn-more {
+    font-size: 2.4rem;
+  }
+
+  .features-bottom {
+    margin-top: 40rem;
+  }
+
+  .feature-text-bottom {
+    font-size: 2.4rem;
+  }
+
+  .feature-heading-bottom {
+    font-size: 4.2rem;
+  }
+
+  .feature-heading {
+    font-size: 5.4rem;
+  }
+
+  .feature-text {
+    font-size: 2.8rem;
+  }
+}
+
+/* Large Laptop - 1440px */
+
+@media (max-width: 1440px) {
+  .features {
+    grid-template-rows: 50vh 50vh 50vh;
+  }
+
+  .feature-heading {
+    font-size: 4.4rem;
+  }
+
+  .feature-text {
+    font-size: 2rem;
+  }
+
+  .features-bottom {
+    margin-top: 32rem;
+  }
+
+  .feature-heading-bottom {
+    font-size: 2.8rem;
+  }
+
+  .feature-text-bottom {
+    font-size: 2rem;
+  }
+
+  .cherry {
+    margin-left: 0;
+  }
+
+  .oranges {
+    margin-right: 0;
+  }
+}
 
 /* Laptop */
 @media (max-width: 1095px) {
@@ -210,5 +389,14 @@ body {
   .arrow {
     right: 48%;
     top: 44%;
+  }
+
+  .feature {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 12rem;
   }
 }
