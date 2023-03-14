@@ -550,6 +550,10 @@ body {
     margin: 0;
   }
 
+  .transform {
+    margin-bottom: 1.5rem;
+  }
+
   .nav {
     margin: 0;
   }
