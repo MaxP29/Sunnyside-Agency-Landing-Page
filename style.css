@@ -7,12 +7,13 @@
 
 html {
   font-size: 62.5%;
-  vertical-align: baseline;
+  scroll-behavior: smooth;
 }
 
 body {
-  width: 100vw;
-  height: 100%;
+  /* width: 100vw;
+  height: 100%; */
+  background-color: hsl(26, 100%, 99%);
 }
 
 /* Demo - 1095px x 1010px */
@@ -21,7 +22,7 @@ body {
 
 .header {
   position: relative;
-  height: 62vh;
+  height: 70vh;
   min-width: 100%;
   background: url("images/desktop/image-header.jpg") no-repeat;
   background-size: cover;
@@ -34,54 +35,73 @@ body {
   justify-content: space-between;
   align-items: center;
   margin: 0 2rem;
-  padding: 3rem;
+  padding: 3.5rem 4rem;
   z-index: 1;
+}
+
+.header-logo {
+  height: 3rem;
 }
 
 .nav-links {
   align-items: center;
   font-size: 1.8rem;
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .title {
   font-family: "Fraunces";
-  font-weight: 700;
+  font-weight: 900;
   font-size: 5.2rem;
   letter-spacing: 0.5rem;
-  margin-top: 3rem;
+  margin-top: 7rem;
   text-align: center;
   color: white;
   text-transform: uppercase;
 }
 
 .arrow {
-  scale: 0.8;
   position: absolute;
   right: 49%;
-  top: 38%;
+  top: 39%;
+  animation: nudge 1.2s ease-in-out infinite 2s alternate;
+  animation: name duration timing-function delay iteration-count direction
+    fill-mode;
+}
+
+@keyframes nudge {
+  100% {
+    transform: translateY(-20%);
+    top: 50%;
+  }
 }
 
 .nav-link {
+  font-family: "Barlow";
   color: #fff;
   text-decoration: none;
   margin-right: 2rem;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
 }
 
 .nav-link:last-child {
+  font-size: 1.6rem;
+  font-family: "Fraunces";
   color: black;
-  font-weight: bold;
-  padding: 1rem 2rem;
-  background-color: white;
+  font-weight: 700;
+  padding: 1.8rem 3rem;
+  background-color: #fff;
   border-radius: 10rem;
   text-transform: uppercase;
 }
 
-/* Features & Images */
+.nav-link:last-child:hover {
+  background-color: rgb(255, 255, 255, 0.2);
+  color: #fff;
+}
 
-/* FIXME / REMINDER: Fix Underlines (Learn-More, change Position = relative), Sort Out Media Queries & Sizing, Upped rows to 50vh - Needs checking with the rest of the changes */
+/* Features & Images */
 
 .features {
   display: grid;
@@ -104,10 +124,11 @@ body {
 }
 
 .feature-text {
+  font-family: "Barlow";
   line-height: 1.6;
   margin-top: 2rem;
-  font-size: 2rem;
-  color: hsl(213, 9%, 39%, 0.7);
+  font-size: 1.8rem;
+  color: hsl(213, 9%, 39%, 1);
 }
 
 .features-bottom {
@@ -133,13 +154,15 @@ body {
 }
 
 .feature-text-bottom {
+  font-family: "Barlow";
   text-align: center;
   font-size: 1.8rem;
   margin-bottom: 4rem;
+  line-height: 1.6;
 }
 
 .learn-more {
-  display: flex;
+  display: inline-block;
   margin-top: 4rem;
   font-size: 1.8rem;
   text-decoration: none;
@@ -150,29 +173,23 @@ body {
 }
 
 .underline {
-  position: absolute;
-  width: 20%;
+  width: 33%;
   height: 1rem;
   border-radius: 2rem;
-  right: 0;
   opacity: 0.3;
   transition: 0.5s ease-in-out;
-  z-index: -1;
+  margin-top: -0.5rem;
 }
 
 .underline-yellow {
-  bottom: 13%;
-  left: 16%;
   background-color: hsl(51, 100%, 49%);
 }
 
 .underline-red {
-  bottom: 7%;
-  left: 16%;
   background-color: hsl(7, 99%, 70%);
 }
 
-.underline-red:hover {
+.learn-more:hover ~ .underline {
   opacity: 1;
 }
 
@@ -205,7 +222,7 @@ body {
 /* Client Testimonials */
 
 .testimonials {
-  height: 50vh;
+  height: 44vh;
   margin: 10rem 0;
   display: flex;
   flex-direction: column;
@@ -216,7 +233,7 @@ body {
 .testimonial-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  margin: 6rem 9rem 0 9rem;
+  margin: 0 9rem 0 9rem;
 }
 
 .testimonial {
@@ -232,20 +249,22 @@ body {
   letter-spacing: 0.5rem;
   text-transform: uppercase;
   font-size: 2.4rem;
+  margin-top: 8rem;
   text-align: center;
 }
 
 .testimonial-img {
-  height: 30%;
+  height: 18%;
   border-radius: 50%;
   margin-bottom: 5rem;
 }
 
 .testimonial-text {
+  font-family: "Barlow";
   text-align: center;
   font-size: 1.8rem;
   color: hsl(213, 9%, 39%);
-  margin-bottom: 6rem;
+  margin-bottom: 8rem;
   line-height: 1.6;
 }
 
@@ -257,6 +276,7 @@ body {
 }
 
 .testimonial-job {
+  font-family: "Barlow";
   font-size: 1.4rem;
   color: hsl(213, 9%, 39%, 0.5);
 }
@@ -276,7 +296,7 @@ body {
 .footer {
   font-size: 1.6rem;
   color: hsl(168, 34%, 41%);
-  height: 30vh;
+  height: 26vh;
   background-color: hsl(167, 44%, 70%);
 }
 
@@ -285,38 +305,59 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 6rem;
+  padding-top: 8rem;
 }
 
 .footer-logo {
-  font-size: 3rem;
+  filter: brightness(0) saturate(100%) invert(39%) sepia(11%) saturate(1477%)
+    hue-rotate(115deg) brightness(94%) contrast(80%);
+  height: 3.4rem;
   font-weight: 900;
   margin-bottom: 4rem;
 }
 
 .footer-links {
   display: flex;
+  font-weight: none;
   gap: 5rem;
 }
 
 .footer-link {
+  font-family: "Barlow";
   text-decoration: none;
   color: hsl(168, 34%, 41%);
 }
 
+.footer-link:hover {
+  color: #fff;
+}
+
 .social-links {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   margin-top: 8rem;
 }
 
-/* Media Queries - (1650 x 1295) */
+.social:hover {
+  filter: brightness(1000%);
+  cursor: pointer;
+}
+
+/* Media Queries */
 
 /* 1920px x 1080px */
 
 @media (max-width: 1920px) {
+  .title {
+    margin-top: 3rem;
+  }
+
+  .arrow {
+    top: 38%;
+  }
+
   .features {
-    grid-template-rows: 60vh 60vh 60vh;
+    grid-template-rows: 55vh 55vh 55vh;
   }
 
   .learn-more {
@@ -324,15 +365,15 @@ body {
   }
 
   .features-bottom {
-    margin-top: 40rem;
+    margin-top: 44rem;
   }
 
   .feature-text-bottom {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 
   .feature-heading-bottom {
-    font-size: 4.2rem;
+    font-size: 3.2rem;
   }
 
   .feature-heading {
@@ -340,27 +381,92 @@ body {
   }
 
   .feature-text {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
+  }
+
+  .underline {
+    width: 26.5%;
+  }
+}
+
+/* For Absolute Positioning - Underline Property & Arrow */
+
+@media (max-width: 1750px) {
+  .testimonial-text {
+    font-size: 2rem;
+  }
+  .underline {
+    width: 30%;
+  }
+}
+
+@media (max-width: 1650px) {
+  .underline {
+    width: 33%;
+    margin-left: -0.5rem;
+  }
+
+  .arrow {
+    top: 41%;
+  }
+}
+
+@media (max-width: 1550px) {
+  .underline {
+    width: 37%;
+  }
+
+  .arrow {
+    top: 42%;
   }
 }
 
 /* Large Laptop - 1440px */
 
 @media (max-width: 1440px) {
+  .header {
+    height: 74vh;
+  }
+
+  .title {
+    margin-top: 8rem;
+  }
+
+  .arrow {
+    position: absolute;
+    right: 49%;
+    top: 45%;
+  }
+
   .features {
-    grid-template-rows: 50vh 50vh 50vh;
+    grid-template-rows: 55vh 55vh 55vh;
   }
 
   .feature-heading {
-    font-size: 4.4rem;
+    font-size: 4rem;
+    font-weight: 900;
+    margin: 2rem 2rem 1rem 2rem;
   }
 
   .feature-text {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin: 0 1rem 0 2rem;
+  }
+
+  .underline {
+    width: 28%;
+    margin-left: 2rem;
+  }
+
+  .learn-more {
+    font-weight: 900;
+    font-size: 1.6rem;
+    margin-top: 1.5rem;
+    margin-left: 2rem;
   }
 
   .features-bottom {
-    margin-top: 32rem;
+    margin-top: 36rem;
   }
 
   .feature-heading-bottom {
@@ -368,15 +474,32 @@ body {
   }
 
   .feature-text-bottom {
+    font-size: 1.6rem;
+    margin: 1rem 6rem 2rem 6rem;
+  }
+
+  .testimonials {
+    height: 52vh;
+  }
+
+  .testimonial-heading {
     font-size: 2rem;
+    font-weight: 900;
   }
 
-  .cherry {
-    margin-left: 0;
+  .testimonial-text {
+    font-size: 1.8rem;
   }
 
-  .oranges {
-    margin-right: 0;
+  .footer {
+    height: 32vh;
+  }
+}
+
+@media (max-width: 1250px) {
+  .egg,
+  .lamp {
+    background-position: center;
   }
 }
 
@@ -398,5 +521,129 @@ body {
     flex-direction: column;
     gap: 2rem;
     padding: 12rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .body {
+    overflow-x: hidden;
+    margin: 0;
+  }
+
+  .header {
+    min-width: 100vw;
+    height: 70vh;
+    background: url("images/desktop/image-header.jpg") no-repeat;
+    background-size: 220% 100%;
+    background-position: 50%;
+    margin: 0;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 100vw;
+    text-align: center;
+  }
+
+  .arrow {
+    right: 46%;
+    top: 50%;
+  }
+
+  .features {
+    min-width: 100vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: 45vh 45vh 45vh;
+  }
+
+  .learn-more {
+    margin-left: 0;
+  }
+
+  .underline {
+    margin-left: 10.5rem;
+    width: 40%;
+  }
+
+  .feature {
+    padding: 4rem;
+  }
+
+  .gallery-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 30rem;
+  }
+
+  .testimonial-container {
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+
+  .testimonials {
+    display: grid;
+    min-width: 100vw;
+    margin: 0;
+  }
+
+  .testimonial {
+    margin: 0 6rem 0 6rem;
+  }
+
+  .testimonial-text {
+    margin-bottom: 4rem;
+  }
+
+  .gallery {
+    display: grid;
+    margin-top: 50rem;
+  }
+
+  .gallery-img {
+    width: 50vw;
+    height: 50vw;
+  }
+
+  .footer {
+    width: 100vw;
+  }
+
+  .egg {
+    grid-row: 1;
+  }
+}
+
+@media (max-width: 420px) {
+  .underline {
+    width: 45%;
+    margin-left: 9rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .underline {
+    width: 46%;
+    margin-left: 8.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .title {
+    font-size: 4.8rem;
+  }
+
+  .underline {
+    width: 47%;
+    margin-left: 7.5rem;
+  }
+
+  .gallery {
+    margin-top: 60rem;
   }
 }
